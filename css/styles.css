@@ -1,0 +1,36 @@
+h1 {
+  text-align: center;
+}
+
+.box {
+  width: 60% !important;
+  background-color: rgba(255, 255, 255, 0.427);
+  border-radius: 2%;
+  padding: 10px 15px;
+  box-sizing: border-box;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.box-no-bg {
+  width: 60% !important;
+  background-color: white;
+  border-radius: 2%;
+  padding: 10px 15px;
+  box-sizing: border-box;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+label {
+  font-size: 12px;
+}
+
+.parent {
+  background-image: url("../img/brick-wall-1834784_1280.jpg");
+}
+
+.parent-height-100 {
+  background-image: url("../img/brick-wall-1834784_1280.jpg");
+  height: 100vh;
+}
