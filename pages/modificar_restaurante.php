@@ -13,47 +13,58 @@ $row = mysqli_fetch_array($query);
 ?>
 <div class="d-flex justify-content-center parent">
     <div class="box">
-        <h1>Restaurante</h1>
-        <form class="container" action="" method="POST">
+        <h2>Modificar datos del restaurante</h2>
+        <form class="container" action="../php/modificar_restaurante.php" method="POST">
+            <div>
+                <input type="hidden" value="<?php echo $row["Id"] ?>" name="id" readonly />
+            </div>
             <div class="mb-3">
                 <label class="form-label">Razón Social</label>
-                <input class="form-control" type="text" placeholder="Ej: Unicornio S.A" value="<?php echo $row["RazonSocial"] ?>" />
+                <input class="form-control" type="text" placeholder="Ej: Unicornio S.A" name="razon_social" value="<?php echo $row["RazonSocial"] ?>" />
             </div>
             <div class="mb-3">
                 <label class="form-label">Nombre de Fantasía</label>
-                <input class="form-control" type="text" placeholder="Ej: Unicornio" value="<?php echo $row["RazonSocial"] ?>" />
+                <input class="form-control" type="text" placeholder="Ej: Unicornio" name="nombre_fantasia" value="<?php echo $row["NombreFantasía"] ?>" />
             </div>
             <div class="mb-3">
                 <label class="form-label">CUIT (sin guiones)</label>
-                <input class="form-control" type="text" placeholder="Ej: 00-00000000-0" value="<?php echo $row["RazonSocial"] ?>" />
+                <input class="form-control" type="text" placeholder="Ej: 00-00000000-0" name="cuit" value="<?php echo $row["CUIT"] ?>" />
             </div>
             <div class="mb-3">
                 <label class="form-label">Dirección</label>
-                <input class="form-control" type="text" placeholder="Ej: Buenos Aires 1000" value="<?php echo $row["RazonSocial"] ?>" />
+                <input class="form-control" type="text" placeholder="Ej: Buenos Aires 1000" name="direccion" value="<?php echo $row["Direccion"] ?>" />
             </div>
             <div class="mb-3">
                 <label class="form-label">Ubicación</label>
-                <input class="form-control" type="text" placeholder="Url de google maps" value="<?php echo $row["RazonSocial"] ?>" />
+                <input class="form-control" type="text" placeholder="Url de google maps" name="ubicacion" value="<?php echo $row["Ubicacion"] ?>" />
             </div>
             <div class="mb-3">
                 <label class="form-label">Medios de Pago</label>
-                <select class="form-select ">
-                    <option value="-1" selected>Por Defecto</option>
-                    <option value="1">Todos</option>
-                    <option value="2">Tarjetas</option>
-                    <option value="3">Efectivo</option>
+                <select class="form-select" name="medios_de_pago">
+                    <option value="-1" <?php if ($row["MediosDePago"] == -1) {
+                                            echo "selected";
+                                        } ?>>Por Defecto</option>
+                    <option value="1" <?php if ($row["MediosDePago"] == "todos") {
+                                            echo "selected";
+                                        } ?>>Todos</option>
+                    <option value="2" <?php if ($row["MediosDePago"] == "tarjeta") {
+                                            echo "selected";
+                                        } ?>>Tarjetas</option>
+                    <option value="3" <?php if ($row["MediosDePago"] == "efectivo") {
+                                            echo "selected";
+                                        } ?>>Efectivo</option>
                 </select>
             </div>
             <div class="mb-3">
                 <label class="form-label">Demora Promedio</label>
-                <input class="form-control" type="number" min="0" value="<?php echo $row["DemoraPromedio"] ?>" />
+                <input class="form-control" type="number" min="0" name="demora_promedio" value="<?php echo $row["DemoraPromedio"] ?>" />
             </div>
             <div class="mb-3">
                 <label class="form-label">Logo</label>
-                <input class="form-control" type="text" placeholder="Url de Logo" value="<?php echo $row["RazonSocial"] ?>" />
+                <input class="form-control" type="text" placeholder="Url de Logo" name="logo" value="<?php echo $row["Logo"] ?>" />
             </div>
             <button class="btn btn-primary">Guardar</button>
-            <a class="btn" href="./restaurantes.php">Cancelar</a>
+            <a class="btn btn-outline-dark" href="./restaurantes.php">Cancelar</a>
         </form>
     </div>
 

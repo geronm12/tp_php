@@ -10,7 +10,7 @@ $query = mysqli_query($conn, $sql);
 <div class="parent-height-100">
     <div class="d-flex justify-content-center">
         <div class="box-no-bg">
-            <a class="btn btn-primary" href="./agregar_restaurante.php">Agregar</a>
+            <a class="btn btn-primary" href="./agregar_restaurante.php">Nuevo Restaurante</a>
             <table class="table">
                 <thead>
                     <tr>
@@ -29,8 +29,9 @@ $query = mysqli_query($conn, $sql);
                             <td>
                                 <div>
                                     <a href="modificar_restaurante.php?id=<?php echo $row["Id"] ?>">M</a>
-                                    <a href="#">E</a>
-                                    <a href="restaurantes_id.php">D</a>
+                                    <a href="#" data-bs-toggle="modal" data-bs-target="#modal<?php echo $row["Id"] ?>">E</a>
+                                    <a href="restaurantes_id.php?id=<?php echo $row["Id"] ?>">D</a>
+                                    <?php require("./base/modal.php"); ?>
                                 </div>
                             </td>
                         </tr>
@@ -40,6 +41,7 @@ $query = mysqli_query($conn, $sql);
         </div>
     </div>
 </div>
+
 
 <?php
 require("./base/footer.php");

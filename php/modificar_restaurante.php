@@ -63,18 +63,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $demora_promedio = $input_demora_promedio;
     }
 
-    $input_logo = trim($_POST["logo"]);
-    if (empty($input_logo)) {
-        $logo_err = "La demora promedia debe ser mayor a 0.";
+    $input_logo = $_POST["logo"];
+    if ($input_logo == 0) {
+        $demora_logo_err = "La demora promedia debe ser mayor a 0.";
     } else {
         $logo = $input_logo;
     }
 
+
+    $id = $_POST["id"];
+
+
     // Check input errors before inserting in database
-    if (empty($nombre_fantasia_err) && empty($razon_social_err) && empty($ubicacion_err) && empty($medios_de_pago_err) && empty($demora_promedio_err) && empty($cuit_err) && empty($direccion_err) && empty($logo_err)) {
+    if (empty($nombre_fantasia_err) && empty($razon_social_err) && empty($ubicacion_err) && empty($medios_de_pago_err) && empty($demora_promedio_err) && empty($cuit_err) && empty($direccion_err)) {
         // Prepare an insert statement
-        $sql = "INSERT INTO resturante (NombreFantasía, RazonSocial, CUIT, Direccion, Ubicacion, MediosDePago, DemoraPromedio, Logo)
-                VALUES ('$nombre_fantasia', '$razon_social', '$cuit', '$direccion', '$ubicacion', '$medios_de_pago', '$demora_promedio', '$logo')";
+        $sql = "UPDATE resturante SET NombreFantasía = '$nombre_fantasia', RazonSocial ='$razon_social', CUIT = '$cuit', Direccion ='$direccion', Ubicacion ='$ubicacion', MediosDePago = '$medios_de_pago', DemoraPromedio ='$demora_promedio', Logo = '$logo'
+                WHERE Id = $id";
 
         $query = mysqli_query($conn, $sql);
 
@@ -89,6 +93,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "<h1>$demora_promedio_err</h1>";
         echo "<h1>$cuit_err</h1>";
         echo "<h1>$direccion_err</h1>";
-        echo "<h1>$logo_err</h1>";
     }
 }
