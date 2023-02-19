@@ -25,6 +25,11 @@ $row_r = mysqli_fetch_array($query_r);
             <a href="restaurantes.php"> Volver </a>
             <h1><?php echo  $row_r["NombreFantasía"] ?></h1>
             <a class="btn btn-primary" href="agregar_comida.php?id=<?php echo $restauranteid ?>">Agregar Plato</a>
+            <img src="<?php echo $row_r["Logo"] ?>" />
+            <span><?php echo $row_r["Direccion"] ?></span>
+            <span><?php echo $row_r["Ubicacion"] ?></span>
+            <span><?php echo $row_r["MediosDePago"] ?></span>
+            <span><?php echo $row_r["DemoraPromedio"] ?></span>
             <table class="table">
                 <thead>
                     <tr>

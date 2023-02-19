@@ -13,7 +13,7 @@ $row = mysqli_fetch_array($query);
 
 ?>
 
-<div class="d-flex justify-content-center parent">
+<div class="d-flex justify-content-center parent-height-100">
     <div class="box">
         <h2>Modificar datos del plato</h2>
         <form class="container" action="../php/modificar_comida.php" method="POST">
