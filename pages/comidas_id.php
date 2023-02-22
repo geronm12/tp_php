@@ -14,6 +14,9 @@ $row = mysqli_fetch_array($query);
 ?>
 <div class="d-flex justify-content-center parent-height-100">
     <div class="box">
+        <a href="./restaurantes_id.php?id=<?php echo $row["RestauranteId"] ?>" class="texto-negro"> <span class="material-symbols-outlined">
+                arrow_back
+            </span> </a>
         <h3><?php echo $row["Nombre"] ?></h3>
         <img src="<?php echo $row["Imagen"] ?>" />
         <span>Descripción</span>
@@ -22,7 +25,7 @@ $row = mysqli_fetch_array($query);
             <span>Precio</span> <span>$<?php echo $row["Precio"] ?></span>
             <span>Demora</span> <span><?php echo $row["TiempoCoccion"] ?>'</span>
         </div>
-        <a href="./restaurantes_id.php?id=<?php echo $row["RestauranteId"] ?>">Volver</a>
+
     </div>
 </div>
 

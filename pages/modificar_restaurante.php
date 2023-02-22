@@ -13,7 +13,10 @@ $row = mysqli_fetch_array($query);
 ?>
 <div class="d-flex justify-content-center parent">
     <div class="box">
-        <h2>Modificar datos del restaurante</h2>
+        <a href="./restaurantes.php" class="texto-negro"> <span class="material-symbols-outlined">
+                arrow_back
+            </span> </a>
+        <h3> <?php echo $row["RazonSocial"] ?> <span class="badge bg-warning">Modificar</span></h3>
         <form class="container" action="../php/modificar_restaurante.php" method="POST">
             <div>
                 <input type="hidden" value="<?php echo $row["Id"] ?>" name="id" readonly />
@@ -63,7 +66,7 @@ $row = mysqli_fetch_array($query);
                 <label class="form-label">Logo</label>
                 <input class="form-control" type="text" placeholder="Url de Logo" name="logo" value="<?php echo $row["Logo"] ?>" />
             </div>
-            <button class="btn btn-primary">Guardar</button>
+            <button class="btn btn-dark">Guardar</button>
             <a class="btn btn-outline-dark" href="./restaurantes.php">Cancelar</a>
         </form>
     </div>

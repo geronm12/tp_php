@@ -15,7 +15,10 @@ $row = mysqli_fetch_array($query);
 
 <div class="d-flex justify-content-center parent-height-100">
     <div class="box">
-        <h2>Modificar datos del plato</h2>
+        <a href="./restaurantes_id.php?id=<?php echo $row["RestauranteId"]; ?>" class="texto-negro"> <span class="material-symbols-outlined">
+                arrow_back
+            </span> </a>
+        <h3> <?php echo $row["Nombre"] ?> <span class="badge bg-warning">Modificar</span></h3>
         <form class="container" action="../php/modificar_comida.php" method="POST">
             <div class="mb-3">
                 <input type="hidden" value="<?php echo $row["Id"] ?>" name="id" />
@@ -45,7 +48,7 @@ $row = mysqli_fetch_array($query);
                 <label class="form-label">Foto</label>
                 <input class="form-control" type="text" placeholder="Url de la foto" name="imagen" value="<?php echo $row["Imagen"] ?>" />
             </div>
-            <button class="btn btn-primary">Guardar</button>
+            <button class="btn btn-dark">Guardar</button>
             <a class="btn btn-outline-dark" href="./restaurantes_id.php?id=<?php echo $row["RestauranteId"] ?>">Cancelar</a>
         </form>
     </div>

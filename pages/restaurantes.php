@@ -10,7 +10,7 @@ $query = mysqli_query($conn, $sql);
 <div class="parent-height-100">
     <div class="d-flex justify-content-center">
         <div class="box-no-bg">
-            <a class="btn btn-primary" href="./agregar_restaurante.php">Nuevo Restaurante</a>
+            <a class="btn btn-dark" href="./agregar_restaurante.php">Nuevo Restaurante</a>
             <table class="table">
                 <thead>
                     <tr>
@@ -27,10 +27,16 @@ $query = mysqli_query($conn, $sql);
                             <td><?php echo $row["RazonSocial"] ?></td>
                             <td><?php echo $row["NombreFantasía"] ?></td>
                             <td>
-                                <div>
-                                    <a href="modificar_restaurante.php?id=<?php echo $row["Id"] ?>">M</a>
-                                    <a href="#" data-bs-toggle="modal" data-bs-target="#modal<?php echo $row["Id"] ?>">E</a>
-                                    <a href="restaurantes_id.php?id=<?php echo $row["Id"] ?>">D</a>
+                                <div class="fila">
+                                    <a class="texto-negro" data-toggle="tooltip" data-placement="top" title="Modificar" href="modificar_restaurante.php?id=<?php echo $row["Id"] ?>"><span class="material-symbols-outlined">
+                                            construction
+                                        </span></a>
+                                    <a class="texto-negro" data-toggle="tooltip" data-placement="top" title="Eliminar" href="#" data-bs-toggle="modal" data-bs-target="#modal<?php echo $row["Id"] ?>"><span class="material-symbols-outlined">
+                                            delete
+                                        </span></a>
+                                    <a class="texto-negro" data-toggle="tooltip" data-placement="top" title="Detalle" href="restaurantes_id.php?id=<?php echo $row["Id"] ?>"><span class="material-symbols-outlined">
+                                            visibility
+                                        </span></a>
                                     <?php require("./base/modal.php"); ?>
                                 </div>
                             </td>

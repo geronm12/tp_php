@@ -8,7 +8,10 @@ $restauranteid = $_GET["id"];
 
 <div class="d-flex justify-content-center parent-height-100">
     <div class="box">
-        <h1>Agregar Comida</h1>
+        <a href="./restaurantes_id.php?id=<?php echo $restauranteid ?>" class="texto-negro"> <span class="material-symbols-outlined">
+                arrow_back
+            </span> </a>
+        <h2>Plato <span class="badge bg-dark">Nuevo</span> </h2>
         <form class="container" action="../php/agregar_comida.php" method="POST">
             <div class="mb-3">
                 <input type="hidden" value="<?php echo $restauranteid ?>" name="restaurante_id" />
@@ -35,7 +38,7 @@ $restauranteid = $_GET["id"];
                 <label class="form-label">Foto</label>
                 <input class="form-control" type="text" placeholder="Url de la foto" name="imagen" />
             </div>
-            <button class="btn btn-primary">Guardar</button>
+            <button class="btn btn-dark">Guardar</button>
             <a class="btn btn-outline-dark" href="./restaurantes_id.php?id=<?php echo $restauranteid ?>">Cancelar</a>
         </form>
     </div>

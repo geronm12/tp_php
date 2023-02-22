@@ -4,7 +4,10 @@ require("./navbar.php");
 ?>
 <div class="d-flex justify-content-center parent">
     <div class="box">
-        <h1>Nuevo Restaurante</h1>
+        <a href="./restaurantes.php" class="texto-negro"> <span class="material-symbols-outlined">
+                arrow_back
+            </span> </a>
+        <h2>Restaurante <span class="badge bg-dark">Nuevo</span></h2>
         <form class="container" action="../php/agregar_restaurante.php" method="POST">
             <div class="mb-3">
                 <label class="form-label">Razón Social</label>
@@ -42,10 +45,10 @@ require("./navbar.php");
                 <label class="form-label">Logo</label>
                 <input class="form-control" type="text" placeholder="Url de Logo" name="logo" />
             </div>
-            <button class="btn btn-primary">Guardar</button>
+            <button class="btn btn-dark">Guardar</button>
             <a class="btn btn-outline-dark" href="./restaurantes.php">Cancelar</a>
         </form>
-         
+
     </div>
 
     <?php

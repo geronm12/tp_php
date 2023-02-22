@@ -22,14 +22,18 @@ $row_r = mysqli_fetch_array($query_r);
 <div class="parent-height-100">
     <div class="d-flex justify-content-center">
         <div class="box-no-bg">
-            <a href="restaurantes.php"> Volver </a>
-            <h1><?php echo  $row_r["NombreFantasía"] ?></h1>
-            <a class="btn btn-primary" href="agregar_comida.php?id=<?php echo $restauranteid ?>">Agregar Plato</a>
+            <a href="restaurantes.php" class="texto-negro"> <span class="material-symbols-outlined">
+                    arrow_back
+                </span> </a>
+            <h4><span class="badge bg-dark">Restaurante</span> <?php echo  $row_r["NombreFantasía"] ?></h4>
             <img src="<?php echo $row_r["Logo"] ?>" />
             <span><?php echo $row_r["Direccion"] ?></span>
-            <span><?php echo $row_r["Ubicacion"] ?></span>
+            <iframe src="<?php echo $row_r["Ubicacion"] ?>"></iframe>
             <span><?php echo $row_r["MediosDePago"] ?></span>
             <span><?php echo $row_r["DemoraPromedio"] ?></span>
+            <a href="agregar_comida.php?id=<?php echo $restauranteid ?>"><span class="material-symbols-outlined">
+                    add
+                </span></a>
             <table class="table">
                 <thead>
                     <tr>
@@ -43,13 +47,19 @@ $row_r = mysqli_fetch_array($query_r);
                     <?php while ($row = mysqli_fetch_array($query)) : ?>
                         <tr>
                             <td colspan="2"><?php echo $row["Nombre"] ?></td>
-                            <td><?php echo $row["Precio"] ?></td>
+                            <td>$<?php echo $row["Precio"] ?></td>
                             <td><?php echo $row["TiempoCoccion"] ?></td>
                             <td>
                                 <div>
-                                    <a href="modificar_comida.php?id=<?php echo $row["Id"] ?>">M</a>
-                                    <a href="#" data-bs-toggle="modal" data-bs-target="#modal<?php echo $row["Id"] ?>">E</a>
-                                    <a href="comidas_id.php?id=<?php echo $row["Id"] ?>">D</a>
+                                    <a class="texto-negro" data-toggle="tooltip" data-placement="top" title="Modificar" href="modificar_comida.php?id=<?php echo $row["Id"] ?>"><span class="material-symbols-outlined">
+                                            construction
+                                        </span></a>
+                                    <a class="texto-negro" href="#" data-toggle="tooltip" data-placement="top" title="Eliminar" data-bs-toggle="modal" data-bs-target="#modal<?php echo $row["Id"] ?>"><span class="material-symbols-outlined">
+                                            delete
+                                        </span></a>
+                                    <a class="texto-negro" data-toggle="tooltip" data-placement="top" title="Detalle" href="comidas_id.php?id=<?php echo $row["Id"] ?>"><span class="material-symbols-outlined">
+                                            visibility
+                                        </span></a>
                                     <?php require("./base/modal_comidas.php"); ?>
                                 </div>
                             </td>

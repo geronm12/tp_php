@@ -6,11 +6,20 @@ h2 {
   text-align: center;
 }
 
+h3 {
+  text-align: center;
+  padding: 5px;
+}
+
+h4 {
+  text-align: center;
+  padding: 5px;
+}
 .box {
   width: 60% !important;
   background-color: white;
   border-radius: 2%;
-  padding: 10px 15px;
+  padding: 20px 15px;
   box-sizing: border-box;
   margin-top: 20px;
   margin-bottom: 20px;
@@ -20,7 +29,7 @@ h2 {
   width: 60% !important;
   background-color: white;
   border-radius: 2%;
-  padding: 10px 15px;
+  padding: 20px 15px;
   box-sizing: border-box;
   margin-top: 20px;
   margin-bottom: 20px;
@@ -31,10 +40,16 @@ label {
 }
 
 .parent {
-  background-image: url("../img/brick-wall-1834784_1280.jpg");
+  background-image: url("../img/4453736.jpg");
+  background-size: cover;
 }
 
 .parent-height-100 {
-  background-image: url("../img/brick-wall-1834784_1280.jpg");
+  background-image: url("../img/4453736.jpg");
+  background-size: cover;
   height: 100vh;
+}
+
+.texto-negro {
+  color: black;
 }
