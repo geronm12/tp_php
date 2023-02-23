@@ -44,12 +44,44 @@ label {
   background-size: cover;
 }
 
-.parent-height-100 {
+body {
   background-image: url("../img/4453736.jpg");
   background-size: cover;
-  height: 100vh;
 }
 
 .texto-negro {
   color: black;
+}
+
+.texto-grande {
+  color: black;
+  font-size: 35px;
+}
+
+.logo-parent {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.logo {
+  width: 30%;
+  height: 30%;
+}
+
+.datos-restaurante {
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.foto {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.item {
+  width: 100px;
+  height: 50px;
+  text-align: center;
+  margin-left: 10px;
 }

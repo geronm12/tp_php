@@ -22,18 +22,46 @@ $row_r = mysqli_fetch_array($query_r);
 <div class="parent-height-100">
     <div class="d-flex justify-content-center">
         <div class="box-no-bg">
-            <a href="restaurantes.php" class="texto-negro"> <span class="material-symbols-outlined">
+            <a href="restaurantes.php" class="texto-negro">
+                <span class="material-symbols-outlined">
                     arrow_back
-                </span> </a>
+                </span>
+            </a>
             <h4><span class="badge bg-dark">Restaurante</span> <?php echo  $row_r["NombreFantasía"] ?></h4>
-            <img src="<?php echo $row_r["Logo"] ?>" />
-            <span><?php echo $row_r["Direccion"] ?></span>
-            <iframe src="<?php echo $row_r["Ubicacion"] ?>"></iframe>
-            <span><?php echo $row_r["MediosDePago"] ?></span>
-            <span><?php echo $row_r["DemoraPromedio"] ?></span>
-            <a href="agregar_comida.php?id=<?php echo $restauranteid ?>"><span class="material-symbols-outlined">
+            <div class="jumbotron">
+                <div class="d-flex justify-content-center logo-parent">
+                    <img class="logo" src="<?php echo $row_r["Logo"] ?>" />
+                </div>
+                <div class="d-flex justify-content-center">
+                    <span class="material-symbols-outlined">
+                        location_on
+                    </span>
+                    <span>
+                        <b> <?php echo $row_r["Direccion"] ?> </b>
+                    </span>
+                </div>
+                <hr class="my-4">
+                <div class="datos-restaurante d-flex">
+                    <iframe src="<?php echo $row_r["Ubicacion"] ?>"></iframe>
+                    <div class="container">
+                        <div class="d-flex align-items-center flex-column">
+                            <b>Medios de Pago</b> <span><?php echo strtoupper($row_r["MediosDePago"])  ?></span>
+                        </div>
+                        <br>
+                        <div class="d-flex align-items-center flex-column">
+                            <b>Demora Promedio</b><span><?php echo $row_r["DemoraPromedio"] ?>'</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a class="badge" href="agregar_comida.php?id=<?php echo $restauranteid ?>">
+                <span class="material-symbols-outlined texto-grande">
                     add
-                </span></a>
+                </span>
+                <span class="badge badge-pill bg-dark">
+                    Nuevo Plato
+                </span>
+            </a>
             <table class="table">
                 <thead>
                     <tr>

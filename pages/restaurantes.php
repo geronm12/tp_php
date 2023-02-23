@@ -10,7 +10,12 @@ $query = mysqli_query($conn, $sql);
 <div class="parent-height-100">
     <div class="d-flex justify-content-center">
         <div class="box-no-bg">
-            <a class="btn btn-dark" href="./agregar_restaurante.php">Nuevo Restaurante</a>
+            <a class="badge" href="./agregar_restaurante.php" data-toggle="tooltip" data-placement="top" title="Agregar Restaurante">
+                <span class="material-symbols-outlined texto-grande">
+                    add
+                </span>
+                <span class="badge badge-pill bg-dark">Nuevo Restaurante</span>
+            </a>
             <table class="table">
                 <thead>
                     <tr>
