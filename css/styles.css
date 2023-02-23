@@ -23,6 +23,7 @@ h4 {
   box-sizing: border-box;
   margin-top: 20px;
   margin-bottom: 20px;
+  min-height: 80vh;
 }
 
 .box-no-bg {
@@ -33,6 +34,7 @@ h4 {
   box-sizing: border-box;
   margin-top: 20px;
   margin-bottom: 20px;
+  min-height: 80vh;
 }
 
 label {
@@ -84,4 +86,17 @@ body {
   height: 50px;
   text-align: center;
   margin-left: 10px;
+}
+
+.tarjetas-padre {
+  padding: 0px 20px;
+}
+
+.titulo {
+  margin-top: 20px;
+  background-color: white;
+  width: 20%;
+  padding: 5px;
+  margin-bottom: 20px;
+  text-align: center;
 }
