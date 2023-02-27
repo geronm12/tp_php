@@ -14,7 +14,7 @@ $row = mysqli_fetch_array($query);
 ?>
 <div class="d-flex justify-content-center parent-height-100">
     <div class="box">
-        <a href="./restaurantes_id.php?id=<?php echo $row["RestauranteId"] ?>" class="texto-negro">
+        <a href="./restaurantes_id.php?id=<?php echo $row["RestauranteId"] ?>" data-toggle="tooltip" data-placement="top" title="Volver" class="texto-negro">
             <span class="material-symbols-outlined">
                 arrow_back
             </span>

@@ -11,6 +11,16 @@ $query = mysqli_query($conn, $sql);
     <div class="box">
         <h5 class="text-center">Nuestra lista de restaurantes</h5>
         <hr />
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Descripción del sitio</h5>
+                <p class="card-text"> Sitio de administración de restaurantes y sus respectivos platos que
+                    intenta "simular" el funcionamiento de pedidos ya. Desde la pantalla de "Index"
+                    se podrán acceder a los detalles de los restaurantes o si no desde la opción "Restaurantes"
+                    se podrá acceder a la vista de tabla de los restaurantes.</p>
+            </div>
+        </div>
+        <hr />
         <div class="tarjetas-padre card-deck">
             <?php
             while ($row = mysqli_fetch_array($query)) :

@@ -13,7 +13,7 @@ $row = mysqli_fetch_array($query);
 ?>
 <div class="d-flex justify-content-center parent">
     <div class="box">
-        <a href="./restaurantes.php" class="texto-negro"> <span class="material-symbols-outlined">
+        <a href="./restaurantes.php" class="texto-negro" data-toggle="tooltip" data-placement="top" title="Volver"> <span class="material-symbols-outlined">
                 arrow_back
             </span> </a>
         <h3> <?php echo $row["RazonSocial"] ?> <span class="badge bg-warning">Modificar</span></h3>
@@ -40,6 +40,7 @@ $row = mysqli_fetch_array($query);
             <div class="mb-3">
                 <label class="form-label">Ubicación</label>
                 <input class="form-control" type="text" placeholder="Url de google maps" name="ubicacion" value="<?php echo $row["Ubicacion"] ?>" />
+                <a href="./guia_ubicacion.php" class="badge bg-dark" data-toggle="tooltip" data-placement="top" title="¿Cómo obtener la ubicación?">Ayuda</a>
             </div>
             <div class="mb-3">
                 <label class="form-label">Medios de Pago</label>

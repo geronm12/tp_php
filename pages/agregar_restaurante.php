@@ -4,7 +4,7 @@ require("./navbar.php");
 ?>
 <div class="d-flex justify-content-center parent">
     <div class="box">
-        <a href="./restaurantes.php" class="texto-negro"> <span class="material-symbols-outlined">
+        <a href="./restaurantes.php" class="texto-negro" data-toggle="tooltip" data-placement="top" title="Volver"> <span class="material-symbols-outlined">
                 arrow_back
             </span> </a>
         <h2>Restaurante <span class="badge bg-dark">Nuevo</span></h2>
@@ -28,6 +28,7 @@ require("./navbar.php");
             <div class="mb-3">
                 <label class="form-label">Ubicación</label>
                 <input class="form-control" type="text" placeholder="Url de google maps" name="ubicacion" />
+                <a href="./guia_ubicacion.php" class="badge bg-dark" data-toggle="tooltip" data-placement="top" title="¿Cómo obtener la ubicación?">Ayuda</a>
             </div>
             <div class="mb-3">
                 <label class="form-label">Medios de Pago</label>

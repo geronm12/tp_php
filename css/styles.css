@@ -100,3 +100,8 @@ body {
   margin-bottom: 20px;
   text-align: center;
 }
+
+.tutorial-imagen {
+  width: 50%;
+  height: 50%;
+}

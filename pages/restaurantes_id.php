@@ -22,7 +22,7 @@ $row_r = mysqli_fetch_array($query_r);
 <div class="parent-height-100">
     <div class="d-flex justify-content-center">
         <div class="box-no-bg">
-            <a href="restaurantes.php" class="texto-negro">
+            <a href="restaurantes.php" class="texto-negro" data-toggle="tooltip" data-placement="top" title="Volver">
                 <span class="material-symbols-outlined">
                     arrow_back
                 </span>
@@ -54,7 +54,7 @@ $row_r = mysqli_fetch_array($query_r);
                     </div>
                 </div>
             </div>
-            <a class="badge" href="agregar_comida.php?id=<?php echo $restauranteid ?>">
+            <a class="badge" data-toggle="tooltip" data-placement="top" title="Agregar Comida" href="agregar_comida.php?id=<?php echo $restauranteid ?>">
                 <span class="material-symbols-outlined texto-grande">
                     add
                 </span>
