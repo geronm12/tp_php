@@ -105,3 +105,14 @@ body {
   width: 50%;
   height: 50%;
 }
+
+.perfil {
+  width: 30%;
+  height: 30%;
+  border-radius: 10px;
+  box-shadow: 10px 10px 10px;
+}
+
+.info-personal {
+  margin-left: 20px;
+}
