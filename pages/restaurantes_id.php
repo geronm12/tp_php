@@ -5,7 +5,7 @@ require_once("../php/bd.php");
 
 $restauranteid = $_GET["id"];
 
-$sql = "SELECT  Id, Precio, TiempoCoccion, Nombre from comida";
+$sql = "SELECT  Id, Precio, TiempoCoccion, Nombre from comida WHERE RestauranteId = '$restauranteid'";
 
 $query = mysqli_query($conn, $sql);
 
