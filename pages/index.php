@@ -21,11 +21,11 @@ $query = mysqli_query($conn, $sql);
             </div>
         </div>
         <hr />
-        <div class="tarjetas-padre card-deck">
+        <div class="tarjetas-padre row row-cols-1 row-cols-md-3 g-4">
             <?php
             while ($row = mysqli_fetch_array($query)) :
             ?>
-                <div class="card text-center" style="width: 18rem;">
+                <div class="card card h-100 text-center pos">
                     <img class="card-img-top" src="<?php echo $row["Logo"] ?>" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title"><?php echo $row["NombreFantasía"] ?></h5>
