@@ -102,6 +102,3 @@ $row_r = mysqli_fetch_array($query_r);
 <?php
 require("./base/footer.php");
 ?>
-<?php
-require("./base/footer.php");
-?>

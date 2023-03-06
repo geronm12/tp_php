@@ -24,7 +24,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
 
-
     $input_descripcion = trim($_POST["descripcion"]);
     if (empty($input_descripcion)) {
         $descripcion_err = "Por favor ingrese la url de la descripción.";
@@ -53,9 +52,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $imagen = $input_imagen;
     }
 
-    // Check input errors before inserting in database
+
     if (empty($nombre_err) && empty($descripcion_err) && empty($precio_err) && empty($tiempo_coccion_err) && empty($imagen_err) && empty($restaurante_id_err)) {
-        // Prepare an insert statement
+ 
         $sql = "INSERT INTO comida (RestauranteId, Nombre, Descripcion, Precio, TiempoCoccion, Imagen)
                 VALUES ('$restaurante_id', '$nombre', '$descripcion', '$precio', '$tiempo_coccion', '$imagen')";
 

@@ -61,9 +61,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $imagen = $input_imagen;
     }
 
-    // Check input errors before inserting in database
+
     if (empty($nombre_err) && empty($descripcion_err) && empty($precio_err) && empty($tiempo_coccion_err) && empty($imagen_err) && empty($restaurante_id_err)) {
-        // Prepare an insert statement
+
         $sql = "UPDATE comida SET Nombre = '$nombre', Descripcion = '$descripcion', Precio='$precio', TiempoCoccion='$tiempo_coccion', Imagen =  '$imagen'
                 WHERE Id = '$id'";
 
