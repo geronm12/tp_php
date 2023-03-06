@@ -46,7 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($input_ubicacion)) {
         $ubicacion_err = "Por favor ingrese la url de la ubicación.";
     } else {
-        $ubicacion = $input_ubicacion;
+        $ubicacion = addslashes($input_ubicacion);
     }
 
     $input_medios_de_pago = $_POST["medios_de_pago"];
@@ -72,6 +72,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
     $id = $_POST["id"];
+
 
 
     // Check input errors before inserting in database

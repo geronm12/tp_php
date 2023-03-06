@@ -70,6 +70,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $logo = $input_logo;
     }
 
+    $ubicacion = addslashes($ubicacion);
+
     // Check input errors before inserting in database
     if (empty($nombre_fantasia_err) && empty($razon_social_err) && empty($ubicacion_err) && empty($medios_de_pago_err) && empty($demora_promedio_err) && empty($cuit_err) && empty($direccion_err) && empty($logo_err)) {
         // Prepare an insert statement
